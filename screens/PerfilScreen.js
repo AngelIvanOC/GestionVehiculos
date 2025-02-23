@@ -32,18 +32,20 @@ const PerfilScreen = () => {
       </View>
       
       <Text style={styles.sectionTitle}>Mis autos</Text>
+
       <View style={styles.carCard}>
-      <Image source={carro1} style={styles.carImage}/>
-      <View>
-        <Text style={styles.button}>Chevy POP</Text>
-        <Text style={styles.botonTexto}>$1,355,000</Text>
+        <Image source={carro1} style={styles.carImage}/>
+        <View style={styles.contenidoCard}>
+          <Text style={styles.button}>Chevy POP</Text>
+          <Text style={styles.botonTexto}>$1,355,000</Text>
         </View>
       </View>
+
       <View style={styles.carCard}>
-      <Image source={carro2} style={styles.carImage}/>
-      <View>
-        <Text style={styles.button}>Chevy POP</Text>
-        <Text style={styles.botonTexto}>$1,355,000</Text>
+        <Image source={carro2} style={styles.carImage}/>
+        <View style={styles.contenidoCard}>
+          <Text style={styles.button}>Chevy POP</Text>
+          <Text style={styles.botonTexto}>$1,355,000</Text>
         </View>
       </View>
     </ScrollView>
@@ -53,7 +55,7 @@ const PerfilScreen = () => {
 const styles = StyleSheet.create({
   container: { 
     padding: 20, 
-    backgroundColor: '#f4f4f4' },
+    backgroundColor: 'white' },
 
   card: { 
     backgroundColor: '#0F1837', 
@@ -95,26 +97,37 @@ const styles = StyleSheet.create({
     fontWeight: 'bold', 
     marginVertical: 10 },
 
-  carCard: { flexDirection: 'row', 
+  carCard: { 
+    flexDirection: 'row', 
     alignItems: 'center', 
-    backgroundColor: '#fff', 
-    padding: 10, 
+    justifyContent: 'space-between',
+    backgroundColor: '#919191', 
     borderRadius: 10, 
-    marginBottom: 10 },
+    marginBottom: 10,
+    height: 200
+   },
 
   carImage: { 
-    width: 100,
-    height: 150,
-    marginRight: 10 },
+    width: "50%",
+    height: "100%",
+    borderRadius: 10
+  },
 
-     button: { 
+  contenidoCard: {
+    width: "50%",
+    paddingHorizontal: 10,
+  },
+
+  button: { 
         color: '#FFFFFF', 
-        backgroundColor: '#3A4E7A', 
+        backgroundColor: '#0f1837', 
         padding: 10, 
         borderRadius: 5, 
         alignItems: 'center', 
         marginTop: 10,  
-        alignSelf:'center' },
+        alignSelf:'center',
+        fontSize: 18,
+      },
 
      buttonText: { 
         color: '#FFFFFF', 
@@ -124,14 +137,12 @@ const styles = StyleSheet.create({
   botonTexto: {
     borderColor: "black",
     borderWidth: 2,
-    width: 200,
     fontSize: 18,
     marginVertical: 10,
     textAlign:'center',
     alignSelf:'center',
     padding: 10,
-    borderRadius: 5,
-    
+    borderRadius: 10,
   },
 
   inputTitle:{

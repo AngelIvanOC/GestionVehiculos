@@ -9,6 +9,7 @@ import {
   Image,
 } from "react-native";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
+import Footer from "../components/Footer.js";
 
 const images = [
   require("../assets/Audi.png"),
@@ -42,9 +43,7 @@ const Carousel = ({ images }) => {
         <TouchableOpacity onPress={handlePrevious}>
            <FontAwesome name="chevron-circle-left" size={40} color="white"/>
         </TouchableOpacity>
-        <TouchableOpacity onPress={handleNext} >
-          <FontAwesome name="chevron-circle-right" size={40} color="white"/>
-        </TouchableOpacity>
+        
       </View>
     </View>
   );
@@ -102,20 +101,7 @@ const ProfileScreen = () => {
           </View>
         </View>
 
-        <View style={styles.footer}>
-          <View style={styles.footerContent}>
-            <View style={styles.footerSection}>
-              <Text style={styles.sectionText}><FontAwesome name="envelope" size={20} color="white" /> Correo: luxueyMotor@gmail.com</Text>
-              <Text style={styles.sectionText}><FontAwesome name="phone" size={20} color="white" /> Teléfono: 777 598 8744</Text>
-              <Text style={styles.sectionText}><FontAwesome name="map-marker" size={20} color="white" /> Ubicación: Emiliano Zapata</Text>
-              <Text style={styles.sectionText}>CP: 566163</Text>
-            </View>
-            <View style={styles.footerSection2}>
-              <Image source={require("../assets/TodoBlanco.jpg")} style={styles.footerImg}/>
-              <Text style={styles.sectionTitle}>Luxury Motors</Text>
-            </View>
-          </View>
-        </View>
+        <Footer/>
       </ScrollView>
     </SafeAreaView>
   );
