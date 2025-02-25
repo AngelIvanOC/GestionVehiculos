@@ -14,6 +14,8 @@ import {
   TextInput,   
 } from "react-native";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
+import Footer from '../components/Footer';
+import { useNavigation } from '@react-navigation/native';
 
 const images = [
   require("../assets/Audi.png"),
@@ -57,6 +59,8 @@ const Carousel = ({ images }) => {
 const ProfileScreen = () => {
   const [modalVisible, setModalVisible] = useState(false);
   const [modalVisibleRegister,setModalVisiblegister] = useState(false)
+  const navigation = useNavigation();
+
 
   return (
     <SafeAreaView style={styles.container}>
@@ -94,7 +98,7 @@ const ProfileScreen = () => {
           <Text style={styles.titulo}>Populares</Text>
           <View style={styles.card}>
             <Image source={require('../assets/uno.png')} style={styles.imageCard} />
-            <TouchableOpacity style={styles.buyButton}>
+            <TouchableOpacity style={styles.buyButton} onPress={() => navigation.navigate('CarStack')}>
               <Text style={styles.buyText}>Comprar</Text>
             </TouchableOpacity>
             <View style={styles.priceContainer}>
@@ -104,7 +108,7 @@ const ProfileScreen = () => {
 
           <View style={styles.card}>
             <Image source={require('../assets/dos.png')} style={styles.imageCard} />
-            <TouchableOpacity style={styles.buyButton}>
+            <TouchableOpacity style={styles.buyButton} onPress={() => navigation.navigate('CarStack')}>
               <Text style={styles.buyText}>Comprar</Text>
             </TouchableOpacity>
             <View style={styles.priceContainer}>
@@ -114,29 +118,8 @@ const ProfileScreen = () => {
         </View>
 
         {/* Footer */}
-        <View style={styles.footer}>
-          <View style={styles.footerContent}>
-            <View style={styles.footerSection}>
-              <Text style={styles.sectionText}>
-                <FontAwesome name="envelope" size={20} color="white" /> Correo: luxueyMotor@gmail.com
-              </Text>
-              <Text style={styles.sectionText}>
-                <FontAwesome name="phone" size={20} color="white" /> Teléfono: 777 598 8744
-              </Text>
-              <Text style={styles.sectionText}>
-                <FontAwesome name="map-marker" size={20} color="white" /> Ubicación: Emiliano Zapata
-              </Text>
-              <Text style={styles.sectionText}>CP: 566163</Text>
-            </View>
-            <View style={styles.footerSection2}>
-              <Image
-                source={require("../assets/TodoBlanco.jpg")}
-                style={styles.footerImg}
-              />
-              <Text style={styles.sectionTitle}>Luxury Motors</Text>
-            </View>
-          </View>
-        </View>
+        <Footer/>
+        
       </ScrollView>
       
       {/* =========== M O D A L  D E  R E G I S T E R =========== */}

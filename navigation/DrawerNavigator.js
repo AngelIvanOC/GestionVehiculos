@@ -15,10 +15,10 @@ function HomeStack() {
   return (
     <Stack.Navigator
       screenOptions={({ route }) => ({
-        header: ({ navigation }) => <CustomAppBar navigation={navigation} title={route.name} isRoot={route.name === "Home"} />,
+        header: ({ navigation }) => <CustomAppBar navigation={navigation} title={route.name} isRoot={route.name === "Inicio"} />,
       })}
     >
-      <Stack.Screen name="Home" component={HomeScreen} />
+      <Stack.Screen name="Inicio" component={HomeScreen} />
       <Stack.Screen name="Details" component={DetailsScreen} />
       
     </Stack.Navigator>
@@ -41,11 +41,11 @@ function PerfilStack() {
   return (
     <Stack.Navigator
       screenOptions={({ route }) => ({
-        header: ({ navigation }) => <CustomAppBar navigation={navigation} title={route.name} isRoot={route.name === "Profile"} />,
+        header: ({ navigation }) => <CustomAppBar navigation={navigation} title={route.name} isRoot={route.name === "Perfil"} />,
       })}
     >
       
-      <Stack.Screen name="Profile" component={PerfilScreen} />
+      <Stack.Screen name="Perfil" component={PerfilScreen} />
 
     </Stack.Navigator>
   );
@@ -55,11 +55,11 @@ function CarStack() {
   return (
     <Stack.Navigator
       screenOptions={({ route }) => ({
-        header: ({ navigation }) => <CustomAppBar navigation={navigation} title={route.name} isRoot={route.name === "Car"} />,
+        header: ({ navigation }) => <CustomAppBar navigation={navigation} title={route.name} isRoot={route.name === "Vehiculo"} />,
       })}
     >
       
-      <Stack.Screen name="Car" component={CarScreen} />
+      <Stack.Screen name="Vehiculo" component={CarScreen} />
 
     </Stack.Navigator>
   );

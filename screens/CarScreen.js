@@ -40,14 +40,6 @@ const CarScreen = () => {
         </Modal>
 
         <View style={styles.section}>
-          <Image source={img1} style={styles.image} resizeMode='contain' />
-          <View>
-            <Text style={styles.title}>Pieco Total Sugerido:</Text>
-            <Text style={styles.price}>$915,000 MXN</Text>
-          </View>
-        </View>
-
-        <View style={styles.section}>
           <Image source={img2} style={styles.image} resizeMode='contain' />
           <Text style={styles.name}>Chevy POP</Text>
           <View>
@@ -89,9 +81,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   section: {
-    paddingBottom: 20,
-    borderColor: "#c9c9c9",
-    borderTopWidth: 2,
+    paddingBottom: 20
   },
   image: {
     width: 300,

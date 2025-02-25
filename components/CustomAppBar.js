@@ -11,7 +11,7 @@ const CustomAppBar = ({ navigation, title, isRoot }) => {
         <Image source={require('../assets/CocheLogo.jpg')} style={styles.imagen}/>
         <Text style={styles.title}>{title}</Text>
         <View style={styles.icons}>
-          <FontAwesome name="user" size={30} color="black"/>
+          <FontAwesome name="user" size={30} color="black" onPress={() => navigation.navigate('PerfilStack')}/>
           <TouchableOpacity onPress={() => (isRoot ? navigation.dispatch(DrawerActions.openDrawer()) : navigation.goBack())}>
             <Ionicons name={isRoot ? "menu" : "arrow-back"} size={24} color="black" />
           </TouchableOpacity>
