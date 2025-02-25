@@ -1,8 +1,8 @@
-
-
 import React from 'react';
 import { View, Text, TextInput, Button, Image, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
 import FontAwesome from "react-native-vector-icons/FontAwesome";
+import { useNavigation } from '@react-navigation/native';
+
 
 import IconoImage from "../assets/icono.png"
 import carro1 from "../assets/uno.png"
@@ -12,6 +12,8 @@ import carro3 from "../assets/tres.png"
 import carro4 from "../assets/cuatro.png"
 
 const CatalogoScreen = () => {
+    const navigation = useNavigation();
+  
  return (
      <ScrollView style={styles.container}>
          <View style={styles.section}>
@@ -34,43 +36,46 @@ const CatalogoScreen = () => {
       
        <Text style={styles.sectionTitle}>CATALOGO</Text>
  
-       <View style={styles.carCard}>
-         <Image source={carro1} style={styles.carImage}/>
-         <View style={styles.contenidoCard}>
-           <Text style={styles.button}>Chevy POP</Text>
-           <Text style={styles.botonTexto}>$1,355,000</Text>
-         </View>
-       </View>
+      <TouchableOpacity onPress={() => navigation.navigate('CarStack')}>
+        <View style={styles.carCard}>
+          <Image source={carro1} style={styles.carImage}/>
+          <View style={styles.contenidoCard}>
+            <Text style={styles.button}>Chevy POP</Text>
+            <Text style={styles.botonTexto}>$1,355,000</Text>
+          </View>
+        </View>
+      </TouchableOpacity>
  
-       <View style={styles.carCard}>
-         <Image source={carro2} style={styles.carImage}/>
-         <View style={styles.contenidoCard}>
-           <Text style={styles.button}>Chevy POP</Text>
-           <Text style={styles.botonTexto}>$1,355,000</Text>
-         </View>
-       </View>
-
-       <View style={styles.carCard}>
-         <Image source={carro3} style={styles.carImage}/>
-         <View style={styles.contenidoCard}>
-           <Text style={styles.button}>Chevy POP</Text>
-           <Text style={styles.botonTexto}>$1,355,000</Text>
-         </View>
-       </View>
-
-       <View style={styles.carCard}>
-         <Image source={carro4} style={styles.carImage}/>
-         <View style={styles.contenidoCard}>
-           <Text style={styles.button}>Chevy POP</Text>
-           <Text style={styles.botonTexto}>$1,355,000</Text>
-         </View>
-       </View>
+      <TouchableOpacity onPress={() => navigation.navigate('CarStack')}>
+        <View style={styles.carCard}>
+          <Image source={carro2} style={styles.carImage}/>
+          <View style={styles.contenidoCard}>
+            <Text style={styles.button}>Chevy POP</Text>
+            <Text style={styles.botonTexto}>$1,355,000</Text>
+          </View>
+        </View>
+       </TouchableOpacity>
 
 
+       <TouchableOpacity onPress={() => navigation.navigate('CarStack')}>
+        <View style={styles.carCard}>
+          <Image source={carro3} style={styles.carImage}/>
+          <View style={styles.contenidoCard}>
+            <Text style={styles.button}>Chevy POP</Text>
+            <Text style={styles.botonTexto}>$1,355,000</Text>
+          </View>
+        </View>
+      </TouchableOpacity>
 
-
-
-       
+      <TouchableOpacity onPress={() => navigation.navigate('CarStack')}>
+        <View style={styles.carCard}>
+          <Image source={carro4} style={styles.carImage}/>
+          <View style={styles.contenidoCard}>
+            <Text style={styles.button}>Chevy POP</Text>
+            <Text style={styles.botonTexto}>$1,355,000</Text>
+          </View>
+        </View>
+      </TouchableOpacity>
      </ScrollView>
    );
  };

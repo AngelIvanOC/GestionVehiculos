@@ -3,12 +3,16 @@ import { View, Text, TouchableOpacity, StyleSheet, SafeAreaView, Image } from "r
 import { Ionicons } from "@expo/vector-icons";
 import { DrawerActions } from "@react-navigation/native";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
+import { useNavigation } from '@react-navigation/native';
 
 const CustomAppBar = ({ navigation, title, isRoot }) => {
+  const navigation2 = useNavigation();
   return (
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.appBar}>
+        <TouchableOpacity onPress={() => navigation2.navigate('HomeStack')}>
         <Image source={require('../assets/CocheLogo.jpg')} style={styles.imagen}/>
+        </TouchableOpacity>
         <Text style={styles.title}>{title}</Text>
         <View style={styles.icons}>
           <FontAwesome name="user" size={30} color="black" onPress={() => navigation.navigate('PerfilStack')}/>

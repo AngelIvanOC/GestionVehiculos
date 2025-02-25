@@ -26,6 +26,7 @@ const images = [
 ];
 
 const Carousel = ({ images }) => {
+  const navigation = useNavigation();
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const handleNext = () => {
@@ -41,9 +42,9 @@ const Carousel = ({ images }) => {
   };
 
   return (
+    <TouchableOpacity onPress={() => navigation.navigate('CatalogoStack')} activeOpacity={0.8}>
     <View style={styles.carousel}>
-      <Image source={images[currentIndex]} style={styles.image} />
-
+      <Image source={images[currentIndex]} style={styles.image}  />
       <View style={styles.controls}>
         <TouchableOpacity onPress={handlePrevious}>
           <FontAwesome name="chevron-circle-left" size={40} color="white" />
@@ -53,6 +54,7 @@ const Carousel = ({ images }) => {
         </TouchableOpacity>
       </View>
     </View>
+    </TouchableOpacity>
   );
 };
 
