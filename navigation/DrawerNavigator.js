@@ -7,6 +7,8 @@ import DetailsScreen from "../screens/DetailsScreen";
 import PerfilScreen  from "../screens/PerfilScreen";
 import CustomAppBar from "../components/CustomAppBar";
 import CarScreen from "../screens/CarScreen";
+import Confirmacion from "../screens/Confirmacion";
+
 
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
@@ -55,15 +57,21 @@ function CarStack() {
   return (
     <Stack.Navigator
       screenOptions={({ route }) => ({
-        header: ({ navigation }) => <CustomAppBar navigation={navigation} title={route.name} isRoot={route.name === "Vehiculo"} />,
+        header: ({ navigation }) => (
+          <CustomAppBar 
+            navigation={navigation} 
+            title={route.name} 
+            isRoot={route.name === "Vehiculo"} // Solo "Vehiculo" tiene el menú
+          />
+        ),
       })}
     >
-      
       <Stack.Screen name="Vehiculo" component={CarScreen} />
-
+      <Stack.Screen name="Confirmacion" component={Confirmacion} />
     </Stack.Navigator>
   );
 }
+
 
 function DrawerNavigator() {
   return (

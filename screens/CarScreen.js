@@ -6,38 +6,14 @@ import FontAwesome from "react-native-vector-icons/FontAwesome";
 const img1 = require('../assets/porscheUno.avif');
 const img2 = require('../assets/PorscheDos.avif');
 import Footer from "../components/Footer.js";
+import { useNavigation } from '@react-navigation/native';
 
 const CarScreen = () => {
-  const [modalVisible, setModalVisible] = useState(false);
+  const navigation = useNavigation();
 
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView contentContainerStyle={styles.scrollContent}>
-
-        <Modal
-          animationType="slide"
-          transparent={true}
-          visible={modalVisible}
-          onRequestClose={() => {
-            setModalVisible(!modalVisible);
-          }}>
-          <View style={styles.centeredView}>
-            <View style={styles.modalView}>
-            <Pressable
-                style={styles.botonFlotante}
-                onPress={() => setModalVisible(!modalVisible)}>
-                <Text><FontAwesome name="times-circle" size={40} color="#0f1837"/></Text>
-              </Pressable>
-              <Text style={styles.modalTitle}><FontAwesome name="check-circle" size={80} color="green"/></Text>
-              <Text style={styles.modalText}>¡Compra confirmada!</Text>
-              <Pressable
-                style={[styles.button, styles.buttonClose]}
-                onPress={() => setModalVisible(!modalVisible)}>
-                <Text style={styles.textStyle}>Cerrar</Text>
-              </Pressable>
-            </View>
-          </View>
-        </Modal>
 
         <View style={styles.section}>
           <Image source={img2} style={styles.image} resizeMode='contain' />
@@ -63,9 +39,10 @@ const CarScreen = () => {
           </View>
         </View>
 
-        <TouchableOpacity onPress={() => setModalVisible(true)}>
+        <TouchableOpacity onPress={() => navigation.navigate('Confirmacion')}>
           <Text style={styles.boton}>Comprar Auto</Text>
         </TouchableOpacity>
+
 
         <Footer />
       </ScrollView>
