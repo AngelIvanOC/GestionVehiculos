@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, SafeAreaView } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
-export default function PasswordResetScreen({ navigation }) {
+export default function Codigo({ navigation }) {
   const [codigo, setCodigo] = useState(['', '', '', '']);
 
   const handleChange = (text, index) => {
@@ -43,10 +45,10 @@ export default function PasswordResetScreen({ navigation }) {
             ))}
           </View>
 
-          <TouchableOpacity style={styles.button} onPress={handleSendCode}>
+          <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('PasswordResetScreenStack')}>
             <Text style={styles.buttonText}>Enviar código de verificación</Text>
           </TouchableOpacity>
-
+          
           <TouchableOpacity onPress={handleGoToLogin}>
             <Text style={styles.link}>¿Recordaste tu contraseña? Inicia sesión.</Text>
           </TouchableOpacity>

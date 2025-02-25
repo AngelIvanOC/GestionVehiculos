@@ -49,7 +49,7 @@ export default function PasswordResetScreen({ navigation }) {
             <Text style={styles.link}>¿Recordaste tu contraseña? Inicia sesión.</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.button} onPress={handleSendCode}>
+          <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('HomeStack')}>
             <Text style={styles.buttonText}>Enviar código de verificación</Text>
           </TouchableOpacity>
 

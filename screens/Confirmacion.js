@@ -2,7 +2,9 @@ import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
-const Confirmacion = ({ navigation }) => {
+const Confirmacion = () => {
+  const navigation = useNavigation();
+
   return (
     <View style={styles.container}>
       <FontAwesome name="check-circle" size={80} color="green" />

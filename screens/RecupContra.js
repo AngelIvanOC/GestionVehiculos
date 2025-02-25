@@ -11,7 +11,7 @@ import {
   SafeAreaView,
 } from 'react-native';
 
-export default function PasswordResetScreen({ navigation }) {
+export default function RecuperarContra({ navigation }) {
   const [email, setEmail] = useState('');
 
   const handleSendCode = () => {
@@ -43,7 +43,7 @@ export default function PasswordResetScreen({ navigation }) {
             onChangeText={setEmail}
           />
 
-          <TouchableOpacity style={styles.button} onPress={handleSendCode}>
+          <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('CodigoStack')}>
             <Text style={styles.buttonText}>Enviar código de verificación</Text>
           </TouchableOpacity>
 

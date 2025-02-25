@@ -9,6 +9,11 @@ import CustomAppBar from "../components/CustomAppBar";
 import CarScreen from "../screens/CarScreen";
 import Confirmacion from "../screens/Confirmacion";
 import CatalogoScreen from "../screens/CatalogoScreen";
+import Login1 from "../screens/Login";
+import Register from "../screens/Registro";
+import PasswordResetScreen from "../screens/NuevaContra";
+import RecuperarContra from "../screens/RecupContra";
+import Codigo from "../screens/RecupCodigo";
 
 
 const Drawer = createDrawerNavigator();
@@ -77,6 +82,78 @@ function CatalogoStack() {
   );
 }
 
+function LoginStack(){
+  return(
+    <Stack.Navigator
+      screenOptions={({ route }) => ({
+        header: ({ navigation }) => <CustomAppBar navigation={navigation} title={route.name} isRoot={route.name === "Login"} />,
+      })}
+    >
+      
+      <Stack.Screen name="Login" component={Login1} />
+
+    </Stack.Navigator>
+  );
+}
+
+function RegisterStack(){
+  return(
+    <Stack.Navigator
+      screenOptions={({ route }) => ({
+        header: ({ navigation }) => <CustomAppBar navigation={navigation} title={route.name} isRoot={route.name === "Register"} />,
+      })}
+    >
+      
+      <Stack.Screen name="Register" component={Register} />
+
+    </Stack.Navigator>
+  );
+}
+
+function Password1Stack(){
+  return(
+    <Stack.Navigator
+      screenOptions={({ route }) => ({
+        header: ({ navigation }) => <CustomAppBar navigation={navigation} title={route.name} isRoot={route.name === "Password"} />,
+      })}
+    >
+      
+      <Stack.Screen name="Password" component={RecuperarContra} />
+      
+    </Stack.Navigator>
+  );
+}
+
+
+
+function CodigoStack(){
+  return(
+    <Stack.Navigator
+      screenOptions={({ route }) => ({
+        header: ({ navigation }) => <CustomAppBar navigation={navigation} title={route.name} isRoot={route.name === "Codigo"} />,
+      })}
+    >
+      
+      <Stack.Screen name="Codigo" component={Codigo} />
+      
+    </Stack.Navigator>
+  );
+}
+
+
+function PasswordResetScreenStack(){
+  return(
+    <Stack.Navigator
+      screenOptions={({ route }) => ({
+        header: ({ navigation }) => <CustomAppBar navigation={navigation} title={route.name} isRoot={route.name === "Codigo"} />,
+      })}
+    >
+      
+      <Stack.Screen name="Codigo" component={PasswordResetScreen} />
+      
+    </Stack.Navigator>
+  );
+}
 
 function DrawerNavigator() {
   return (
@@ -85,10 +162,20 @@ function DrawerNavigator() {
       <Drawer.Screen name="PerfilStack" component={PerfilStack} options={{ title: "Perfil" }} />
       <Drawer.Screen name="CarStack" component={CarStack} options={{title: "Car"}} />
       <Drawer.Screen name="CatalogoStack" component={CatalogoStack} options={{title: "Catalogo"}} />
+      <Drawer.Screen name="LoginStack" component={LoginStack} options={{title: "Login"}}/>
+      <Drawer.Screen name="RegisterStack" component={RegisterStack} options={{title: "Register"}} />
+      <Drawer.Screen name="Password1Stack" component={Password1Stack} options={{title: "Password"}} />
+      <Drawer.Screen name="CodigoStack" component={CodigoStack} options={{title: "Codigo"}} />
+      <Drawer.Screen name="PasswordResetScreenStack" component={PasswordResetScreenStack} options={{title: "Reset"}} />
+
+
+
 
     </Drawer.Navigator>
   );
 }
+
+
 
 
 

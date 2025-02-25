@@ -78,11 +78,11 @@ const ProfileScreen = () => {
           </Text>
 
           <View>
-            <TouchableOpacity onPress={() => setModalVisiblegister(true)}>
-              <Text style={styles.botonTexto}>Registrarse</Text>
-            </TouchableOpacity>
-            <TouchableOpacity onPress={() => setModalVisible(true)}>
+          <TouchableOpacity onPress={() => navigation.navigate('LoginStack')}>
               <Text style={styles.botonTexto}>Iniciar sesión</Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate('RegisterStack')}>
+              <Text style={styles.botonTexto}>Registrarse</Text>
             </TouchableOpacity>
           </View>
 
@@ -118,140 +118,10 @@ const ProfileScreen = () => {
             </View>
           </View>
         </View>
-
-        {/* Footer */}
         <Footer/>
         
       </ScrollView>
-      
-      {/* =========== M O D A L  D E  R E G I S T E R =========== */}
-      <Modal 
-        animationType="slide"
-        transparent={true}
-        visible={modalVisibleRegister} 
-        onRequestClose={() => setModalVisibleRegister(false)}
-      >
-        <View style={styles.modalRegisterBackground}>
-          <View style={styles.modalRegisterContainer}>
-            {/* Botón X */}
-            <TouchableOpacity
-              style={styles.closeIcon}
-              onPress={() => setModalVisiblegister(false)}
-            >
-              <FontAwesome name="close" size={30} color="#fff" />
-            </TouchableOpacity>
 
-            {/* Título */}
-            <Text style={styles.modalRegisterTitle}>Registrate</Text>
-
-            {/* Nombre */}
-            <Text style={styles.modalRegisterSub}>Nombre</Text>
-            <TextInput
-              style={styles.modalInput}
-              placeholder="Nombre"
-              placeholderTextColor="#999"
-            />
-            
-            {/*Correo */}
-            <Text style={styles.modalRegisterSub}>Correo</Text>
-            <TextInput
-              style={styles.modalInput}
-              placeholder="Correo"
-              placeholderTextColor="#999"
-            />
-
-            {/*Contraseña */}
-            <Text style={styles.modalRegisterSub}>Contraseña</Text>
-            <TextInput
-              style={styles.modalInput}
-              placeholder="Contraseña"
-              placeholderTextColor="#999"
-            />
-
-            {/*Telefono */}
-            <Text style={styles.modalRegisterSub}>Telefono</Text>
-            <TextInput
-              style={styles.modalInput}
-              placeholder="Telefono"
-              placeholderTextColor="#999"
-            />
-
-            {/*Registrarse */}
-            <TouchableOpacity style={styles.modalButton}>
-              <Text style={styles.modalButtonText}>Registrarse</Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity>
-              <Text style={styles.modalRegister1}>
-                Ya tengo una cuenta
-              </Text>
-            </TouchableOpacity>
-          </View>
-        </View>       
-      </Modal>
-      {/* =========== F I N  M O D A L  D E  R E G I S T E R =========== */}
-
-
-
-      {/* =========== M O D A L  D E  L O G I N =========== */}
-      <Modal
-        animationType="slide"
-        transparent={true}
-        visible={modalVisible}
-        onRequestClose={() => setModalVisible(false)}
-      >
-        <View style={styles.modalBackground}>
-          <View style={styles.modalContainer}>
-            {/* Botón X*/}
-            <TouchableOpacity
-              style={styles.closeIcon}
-              onPress={() => setModalVisible(false)}
-            >
-              <FontAwesome name="close" size={30} color="#fff" />
-            </TouchableOpacity>
-
-            {/*el Titulo */}
-            <Text style={styles.modalTitle}>Inicio de sesión</Text>
-
-            {/*Correo */}
-            <Text style={styles.modalLabel}>Correo</Text>
-            <TextInput
-              style={styles.modalInput}
-              placeholder="Correo electrónico"
-              placeholderTextColor="#999"
-            />
-
-            {/*Contraseña */}
-            <Text style={styles.modalLabel}>Contraseña</Text>
-            <TextInput
-              style={styles.modalInput}
-              placeholder="Contraseña"
-              secureTextEntry={true}
-              placeholderTextColor="#999"
-            />
-
-            {/*Olvido Contra */}
-            <TouchableOpacity onPress={() => navigation.navigate('PasswordResetScreen')}>
-              <Text style={styles.modalRegisterOlvido}>Olvidé mi contraseña</Text>
-            </TouchableOpacity>
-
-
-
-            {/*Ingresar */}
-            <TouchableOpacity style={styles.modalButton}>
-              <Text style={styles.modalButtonText}>Ingresar</Text>
-            </TouchableOpacity>
-
-            {/*registro */}
-            <TouchableOpacity>
-              <Text style={styles.modalRegister}>
-                ¿Aún no tienes cuenta? Regístrate
-              </Text>
-            </TouchableOpacity>
-          </View>
-        </View>
-      </Modal>
-      {/* =========== F I N  M O D A L  D E  L O G I N =========== */}
     </SafeAreaView>
   );
 };
@@ -397,114 +267,6 @@ const styles = StyleSheet.create({
     height: 80,
     alignItems: "center",
     textAlign: "center",
-  },
-
-  /* =========== M O D A L  D E  R E G I S T E R =========== */
-  modalRegisterBackground: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "rgba(0, 0, 0, 0.5)",
-  },
-  modalRegisterContainer: {
-    width: 320, 
-    backgroundColor: "#0F1837", 
-    borderRadius: 10,
-    padding: 20,
-    alignItems: "center",
-    position: "relative",
-  },
-  modalRegisterTitle: {
-      fontSize: 24,
-      color: "#fff",
-      marginBottom: 20,
-      textAlign: "center",
-  },
-  modalRegisterSub: {
-    alignSelf: "flex-start",
-    fontSize: 16,
-    color: "#fff",
-    marginBottom: 5,
-    marginLeft: 5,
-  },
-  modalRegister1: {
-    color: "#fff",
-    fontSize: 14,
-    marginTop: 5,
-    textDecorationLine: "underline",
-    left: 70
-  },
-
-/* =========== M O D A L  D E  L O G I N =========== */
-  modalBackground: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "rgba(0, 0, 0, 0.5)", 
-  },
-  modalContainer: {
-    width: 320, 
-    backgroundColor: "#0F1837", 
-    borderRadius: 10,
-    padding: 20,
-    alignItems: "center",
-    position: "relative", 
-  },
-  closeIcon: {
-    position: "absolute",
-    top: 10,
-    right: 10,
-  },
-  modalTitle: {
-    fontSize: 24,
-    color: "#fff",
-    marginBottom: 20,
-    textAlign: "center",
-  },
-  modalLabel: {
-    alignSelf: "flex-start",
-    fontSize: 16,
-    color: "#fff",
-    marginBottom: 5,
-    marginLeft: 5,
-  },
-  modalInput: {
-    width: "100%",
-    height: 40,
-    backgroundColor: "#fff",
-    borderRadius: 5,
-    paddingHorizontal: 10,
-    marginBottom: 15,
-  },
-  modalButton: {
-    width: "100%",
-    height: 40,
-    backgroundColor: "#3A4E7A",
-    borderRadius: 5,
-    justifyContent: "center",
-    alignItems: "center",
-    marginVertical: 10,
-  },
-  modalButtonText: {
-    color: "#fff",
-    fontSize: 16,
-    fontWeight: "bold",
-  },
-  modalRegisterOlvido: {
-    color: "#fff",
-    fontSize: 14,
-    marginTop: 5,
-    textDecorationLine: "underline",
-    textAlign: "center",
-    left: 75
-  },
-  modalRegister: {
-    color: "#fff",
-    fontSize: 14,
-    marginTop: 5,
-    textDecorationLine: "underline",
-    textAlign: "center",
-    left: 34
   },
 });
 
