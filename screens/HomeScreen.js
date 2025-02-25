@@ -78,10 +78,10 @@ const ProfileScreen = () => {
           </Text>
 
           <View>
-          <TouchableOpacity onPress={() => navigation.navigate('LoginStack')}>
+          <TouchableOpacity onPress={() => navigation.navigate('Login1')}>
               <Text style={styles.botonTexto}>Iniciar sesión</Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => navigation.navigate('RegisterStack')}>
+            <TouchableOpacity onPress={() => navigation.navigate('Register')}>
               <Text style={styles.botonTexto}>Registrarse</Text>
             </TouchableOpacity>
           </View>

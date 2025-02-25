@@ -23,7 +23,7 @@ export default function Login1() {
         <TextInput style={styles.input} placeholder="Contraseña" secureTextEntry={true} placeholderTextColor="#999" />
 
         {/* Olvidó contraseña */}
-        <TouchableOpacity onPress={() => navigation.navigate('Password1Stack')}>
+        <TouchableOpacity onPressIn={() => navigation.navigate('LoginStack')}>
           <Text style={styles.forgotPassword}>Olvidé mi contraseña</Text>
         </TouchableOpacity>
 
@@ -33,9 +33,10 @@ export default function Login1() {
         </TouchableOpacity>
 
         {/* Registro */}
-        <TouchableOpacity onPress={() => navigation.navigate('RegisterStack')}>
-          <Text style={styles.register}>¿Aún no tienes cuenta? Regístrate</Text>
+        <TouchableOpacity onPress={() => navigation.navigate('RecuperarContra')}>
+          <Text style={styles.forgotPassword}>Olvidé mi contraseña</Text>
         </TouchableOpacity>
+
       </View>
     </View>
   );
@@ -46,11 +47,11 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#FFFFFF", // Fondo de la pantalla
+    backgroundColor: "#FFFFFF", 
   },
   loginBox: {
     width: 320,
-    backgroundColor: "#1C2338", // Fondo de la caja de login
+    backgroundColor: "#1C2338", 
     borderRadius: 10,
     padding: 20,
     alignItems: "center",
@@ -110,4 +111,3 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
 });
-

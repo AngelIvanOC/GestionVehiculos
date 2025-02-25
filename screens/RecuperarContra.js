@@ -11,7 +11,7 @@ import {
   SafeAreaView,
 } from 'react-native';
 
-export default function RecuperarContra({ navigation }) {
+export default function RecuperarContra() {
   const [email, setEmail] = useState('');
 
   const handleSendCode = () => {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
+import { FontAwesome } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
-
 
 const Register = () => {
   const navigation = useNavigation();
@@ -52,7 +52,7 @@ const Register = () => {
           <Text style={styles.buttonText}>Registrarse</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={() => navigation.navigate('HomeStack')}>
+        <TouchableOpacity onPressIn={() => navigation.navigate('Login1')}>
           <Text style={styles.loginLink}>Ya tengo una cuenta</Text>
         </TouchableOpacity>
       </View>

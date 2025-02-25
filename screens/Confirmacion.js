@@ -2,8 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
-const Confirmacion = () => {
-  const navigation = useNavigation();
+const Confirmacion = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
