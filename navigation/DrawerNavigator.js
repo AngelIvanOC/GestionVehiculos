@@ -8,6 +8,7 @@ import PerfilScreen  from "../screens/PerfilScreen";
 import CustomAppBar from "../components/CustomAppBar";
 import CarScreen from "../screens/CarScreen";
 import Confirmacion from "../screens/Confirmacion";
+import CatalogoScreen from "../screens/CatalogoScreen";
 
 
 const Drawer = createDrawerNavigator();
@@ -27,17 +28,7 @@ function HomeStack() {
   );
 }
 
-function ProfileStack() {
-  return (
-    <Stack.Navigator
-      screenOptions={({ route }) => ({
-        header: ({ navigation }) => <CustomAppBar navigation={navigation} title={route.name} isRoot={route.name === "Inicio"} />,
-      })}
-    >
-      <Stack.Screen name="Inicio" component={ProfileScreen} />
-    </Stack.Navigator>
-  );
-}
+
 
 function PerfilStack() {
   return (
@@ -72,6 +63,20 @@ function CarStack() {
   );
 }
 
+function CatalogoStack() {
+  return (
+    <Stack.Navigator
+      screenOptions={({ route }) => ({
+        header: ({ navigation }) => <CustomAppBar navigation={navigation} title={route.name} isRoot={route.name === "Catalogo"} />,
+      })}
+    >
+      
+      <Stack.Screen name="Catalogo" component={CatalogoScreen} />
+
+    </Stack.Navigator>
+  );
+}
+
 
 function DrawerNavigator() {
   return (
@@ -79,6 +84,8 @@ function DrawerNavigator() {
       <Drawer.Screen name="HomeStack" component={HomeStack} options={{ title: "Inicio" }} />
       <Drawer.Screen name="PerfilStack" component={PerfilStack} options={{ title: "Perfil" }} />
       <Drawer.Screen name="CarStack" component={CarStack} options={{title: "Car"}} />
+      <Drawer.Screen name="CatalogoStack" component={CatalogoStack} options={{title: "Catalogo"}} />
+
     </Drawer.Navigator>
   );
 }
